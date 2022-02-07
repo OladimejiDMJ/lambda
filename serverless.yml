@@ -1,0 +1,45 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: Restapi
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  memorySize: 2048
+  stage: dev
+  timeout: 15
+  region: us-east-1
+
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+     - http: ANY /{proxy+}
+     - http: ANY /
+    # environment:
+    #   NODE_ENV:development
+    #   PORT:3000
+    #   DB_USERNAME:
+    #   DB_PASSWORD:
+    #   DB_NAME:foobar_devops_tests
+    #   DB_HOST:localhost
+    #   JWT_SECRET:jwt-secret-goes-here
+    #   JWT_ACCESS_EXPIRATION_MINUTES: 150
+    #   JWT_REFRESH_EXPIRATION_DAYS:10
+
+
+  
+     
